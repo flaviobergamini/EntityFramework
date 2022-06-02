@@ -8,6 +8,9 @@ namespace Blog.Models{
         [Key]
         [Required]
         public int PostId { get; set; }
+
+        [Key]
+        [Required]
         public int TagId { get; set; }
     }
 }

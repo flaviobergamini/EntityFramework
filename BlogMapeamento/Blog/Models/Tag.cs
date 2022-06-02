@@ -6,8 +6,18 @@ namespace Blog.Models{
     [Table("Tag")]
     public class Tag{
         [Key]
+        [Required]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int id { get; set; }
+
+        [Required]
+        [MaxLength(80)]
+        [Column("Name", TypeName = "VARCHAR")]
         public string? Name { get; set; }
+
+        [Required]
+        [MaxLength(80)]
+        [Column("Slug", TypeName = "VARCHAR")]
         public string? Slug { get; set; }
 
     }
