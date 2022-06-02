@@ -11,12 +11,6 @@ namespace Blog.Models{
         public int id { get; set; }
 
         [Required]
-        public int CategoryId { get; set; }
-
-        [Required]
-        public int AuthorId { get; set; }
-
-        [Required]
         [MaxLength(160)]
         [Column("Title", TypeName = "VARCHAR")]
         public string? Title { get; set; }
@@ -27,7 +21,7 @@ namespace Blog.Models{
         public string? Summary { get; set; }
 
         [Required]
-        [Column("Boby", TypeName = "TEXT")]
+        [Column("Body", TypeName = "TEXT")]
         public string? Body { get; set; }
 
         [Required]
@@ -40,8 +34,16 @@ namespace Blog.Models{
         public DateTime CreateDate { get; set; }
 
         [Required]
-        [Column("CreateDate", TypeName = "DATETIME")]
+        [Column("LastUpdateDate", TypeName = "DATETIME")]
         public DateTime LastUpdateDate { get; set; }
 
+
+        [ForeignKey("CategoryId")]
+        public int CategoryId { get; set; }
+        public Category? Category {get; set; }
+
+        [ForeignKey("AuthorId")]
+        public int AuthorId { get; set; }
+        public User? Author {get; set;}
     }
 }
