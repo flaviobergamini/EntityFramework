@@ -26,9 +26,10 @@ namespace Blog.Data.Mappings{
             builder.Property(x => x.Slug)
             .IsRequired().
             HasColumnName("Slug")
-            .HasColumnType("NVARCHAR")
+            .HasColumnType("VARCHAR")
             .HasMaxLength(80); 
 
+            builder.HasIndex(x => x.Slug, "IX_Category_Slug").IsUnique();
         }
     }
 }
