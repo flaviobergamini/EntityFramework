@@ -6,7 +6,7 @@ namespace Blog{
     class Program{
         public static void Main(string [] args){
             
-            /*
+           
             var context = new BlogDataContext();
 
            
@@ -38,7 +38,7 @@ namespace Blog{
 
             context.Posts?.Add(post);
             context.SaveChanges();
-            */
+            
             /*
             Faça a instalação do seguinte pacote: 
             > dotnet add package Microsoft.EntityFrameworkCore.Design
@@ -48,6 +48,13 @@ namespace Blog{
 
             Após a instalação, e build do projeto, escreva no terminal:
             > dotnet ef migrations add nome_da_migracao
+
+            Após fazer a migração no comando anterior, vamos agora aplicar essas migrações no banco
+            > dotnet ef database update
+
+            Para remover uma migração e que inclusive já foi enviada para o banco, use:
+            > dotnet ef migrations remove
+            > dotnet ef database update
 
             */
         }

@@ -16,7 +16,7 @@ namespace Blog.Data.Mappings{
             builder.Property(x => x.Bio).IsRequired().HasColumnName("Bio").HasColumnType("TEXT");
             builder.Property(x => x.Image).IsRequired().HasColumnName("Image").HasColumnType("VARCHAR").HasMaxLength(2000);
             builder.Property(x => x.Slug).IsRequired().HasColumnName("Slug").HasColumnType("VARCHAR").HasMaxLength(80).IsUnicode();
-
+            builder.Property(x => x.GitHub);
             builder.HasIndex(x => x.Slug, "IX_User_Slug").IsUnique();
 
             builder.HasMany(x => x.Roles).WithMany(x => x.Users).UsingEntity<Dictionary<string, object>>(
