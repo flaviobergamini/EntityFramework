@@ -52,9 +52,12 @@ namespace Blog{
             Após fazer a migração no comando anterior, vamos agora aplicar essas migrações no banco
             > dotnet ef database update
 
-            Para remover uma migração e que inclusive já foi enviada para o banco, use:
+            -Para remover uma migração e que inclusive já foi enviada para o banco, use:
             > dotnet ef migrations remove
             > dotnet ef database update
+
+            -Para gerar o script SQL do banco, use o comando:
+            > dotnet ef migrations script -o ./script.sql
 
             */
         }
